@@ -1,65 +1,99 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center bg-neutral-950 text-white">
+        <div className="absolute inset-0 bg-black/60" />
+
+        <div className="relative z-10 text-center px-6">
+          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
+            Luxury Vehicle Storage in Montréal
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mt-6 text-neutral-300 max-w-2xl mx-auto">
+            Premium indoor storage, concierge automotive services, and
+            white-glove care for your high-value vehicles.
           </p>
+
+          <div className="mt-8 flex justify-center gap-4">
+            <a
+              href="/contact"
+              className="px-6 py-3 bg-white text-black rounded-md font-medium hover:bg-neutral-200 transition"
+            >
+              Request Storage
+            </a>
+
+            <a
+              href="/services"
+              className="px-6 py-3 border border-white rounded-md hover:bg-white hover:text-black transition"
+            >
+              Explore Services
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* About Preview Section */}
+      <section className="py-24 px-6 bg-black text-white text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          A Secure Facility Designed for Excellence
+        </h2>
+
+        <p className="mt-6 max-w-3xl mx-auto text-neutral-400">
+          Our Montréal-based luxury car storage facility offers 24/7
+          surveillance, climate control, and professional vehicle care
+          services tailored for collectors and enthusiasts.
+        </p>
+      </section>
+
+      {/* Services Preview */}
+      <section className="py-24 px-6 bg-neutral-950 text-white text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          Comprehensive Automotive Services
+        </h2>
+
+        <div className="mt-12 grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <div>
+            <h3 className="text-xl font-medium">Secure Storage</h3>
+            <p className="mt-4 text-neutral-400">
+              Climate-controlled indoor storage with full monitoring.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-medium">Concierge Care</h3>
+            <p className="mt-4 text-neutral-400">
+              Pickup & drop-off, detailing, PPF, ceramic coating.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-medium">Security Monitoring</h3>
+            <p className="mt-4 text-neutral-400">
+              24/7 surveillance with secure vehicle oversight.
+            </p>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 px-6 bg-black text-center text-white">
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          Entrust Your Vehicle to Professionals
+        </h2>
+
+        <p className="mt-6 text-neutral-400 max-w-2xl mx-auto">
+          Experience premium automotive storage and concierge services in
+          Montréal.
+        </p>
+
+        <a
+          href="/contact"
+          className="inline-block mt-8 px-8 py-3 bg-white text-black rounded-md font-medium hover:bg-neutral-200 transition"
+        >
+          Contact Us
+        </a>
+      </section>
+    </>
   );
 }
