@@ -75,9 +75,7 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {/* ── MOBILE: compact 2-col grid, max 4–6 cards ─────────────────────
-            Mobile-first: visible by default, hidden at lg+
-        ─────────────────────────────────────────────────────────────────── */}
+        
         <div className="lg:hidden">
           <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
             {mobileVisible.map((src, i) => (
@@ -114,9 +112,7 @@ export default function GallerySection() {
           </div>
         </div>
 
-        {/* ── DESKTOP: true Pinterest 4-column masonry ──────────────────────
-            hidden on mobile, visible at lg (1024px+)
-        ─────────────────────────────────────────────────────────────────── */}
+       
         <div className="hidden lg:grid grid-cols-4 gap-4 xl:gap-5 items-start">
           {COLUMNS.map((col, colIdx) => (
             <div key={colIdx} className="flex flex-col gap-4 xl:gap-5">
@@ -157,7 +153,7 @@ export default function GallerySection() {
 
       </div>
 
-      {/* ── Lightbox ──────────────────────────────────────────────────────── */}
+      
       <AnimatePresence>
         {lightbox && (
           <motion.div

@@ -4,9 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-/* -------------------------------------------------------------------------- */
-/*                                   DATA                                     */
-/* -------------------------------------------------------------------------- */
+
 
 const sections = [
   {
@@ -29,9 +27,6 @@ const sections = [
   },
 ];
 
-/* -------------------------------------------------------------------------- */
-/*                            SECTION BLOCK                                   */
-/* -------------------------------------------------------------------------- */
 
 function ServiceBlock({
   eyebrow,
@@ -51,10 +46,7 @@ function ServiceBlock({
       transition={{ duration: 0.55, delay: 0.05 }}
       className={`grid grid-cols-1 items-center gap-10 sm:gap-12 md:grid-cols-2 md:gap-16 lg:gap-20`}
     >
-      {/* ── Text col ──
-          On mobile: always first (natural order)
-          On md+: reversed layout uses md:order-2 for text
-      ── */}
+      
       <div className={reversed ? "md:order-2" : ""}>
         {/* Eyebrow */}
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/4 px-3.5 py-1.5">
@@ -102,10 +94,8 @@ function ServiceBlock({
         </div>
       </div>
 
-      {/* ── Image col ──
-          On mobile: below text (order-last)
-          On md+: reversed uses md:order-1
-      ── */}
+      
+      
       <div className={`relative ${reversed ? "md:order-1" : ""}`}>
         {/* Ambient glow — amber replacing cyan */}
         <div
@@ -151,9 +141,7 @@ function ServiceBlock({
   );
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              MAIN SECTION                                  */
-/* -------------------------------------------------------------------------- */
+
 
 export default function ServiceSection() {
   return (
@@ -173,7 +161,7 @@ export default function ServiceSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
 
-        {/* ── Section header ── */}
+       
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +177,7 @@ export default function ServiceSection() {
           </h2>
         </motion.div>
 
-        {/* ── Service blocks ── */}
+        
         <div className="space-y-20 sm:space-y-24 lg:space-y-32">
           {sections.map((s, i) => (
             <ServiceBlock key={s.heading} {...s} index={i} />

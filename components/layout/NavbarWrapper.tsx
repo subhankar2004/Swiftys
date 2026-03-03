@@ -30,10 +30,7 @@ export default function NavbarWrapper() {
   return (
     <Navbar>
 
-      {/* ── DESKTOP (lg: 1024px+) ────────────────────────────────────────────
-          Hidden on all screens below 1024px.
-          Logo │ Nav items centered │ Book a Call CTA
-      ──────────────────────────────────────────────────────────────────────── */}
+     
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />
@@ -42,15 +39,7 @@ export default function NavbarWrapper() {
         </NavbarButton>
       </NavBody>
 
-      {/* ── MOBILE / TABLET (up to lg: 1023px) ───────────────────────────────
-          Visible on phones (0px) through tablets (1023px).
-          Hidden at 1024px+ where desktop NavBody takes over.
-
-          Layout:
-            Header row: Logo │ Book a Call (small) │ Hamburger toggle
-            Dropdown:   Nav links stacked vertically
-                        Full-width Book a Call at the bottom
-      ──────────────────────────────────────────────────────────────────────── */}
+      
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo />

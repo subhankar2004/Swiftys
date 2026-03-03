@@ -11,9 +11,7 @@ import {
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 
-/* -------------------------------------------------------------------------- */
-/*                                   TYPES                                    */
-/* -------------------------------------------------------------------------- */
+// Types
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -49,13 +47,11 @@ interface MobileNavMenuProps {
   isOpen: boolean;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                   NAVBAR                                   */
-/* -------------------------------------------------------------------------- */
+//Navbar
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll(); // track window scroll — not the ref
+  const { scrollY } = useScroll(); 
   const [visible, setVisible] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -75,16 +71,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   );
 };
 
-/* -------------------------------------------------------------------------- */
-/*                                  NAV BODY (Desktop)                        */
-/*                                                                            */
-/*  Mobile-first visibility:                                                  */
-/*    hidden         → not shown on phones/tablets                            */
-/*    lg:flex        → shows at 1024px+                                       */
-/*                                                                            */
-/*  The scroll animation shrinks width from 100% → 85% on lg screens.        */
-/*  On xl+ it goes to 75% for a tighter pill look.                            */
-/* -------------------------------------------------------------------------- */
+
 
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
@@ -112,12 +99,6 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-/* -------------------------------------------------------------------------- */
-/*                                 NAV ITEMS                                  */
-/*                                                                            */
-/*  Items are flex-centered between logo and CTA button.                     */
-/*  text-sm on lg, text-[13px] keeps them fitting at exactly 1024px.         */
-/* -------------------------------------------------------------------------- */
 
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -152,24 +133,12 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   );
 };
 
-/* -------------------------------------------------------------------------- */
-/*                          MOBILE NAV ROOT                                   */
-/*                                                                            */
-/*  Mobile-first visibility:                                                  */
-/*    flex           → always visible (phones/tablets)                        */
-/*    lg:hidden      → disappears at 1024px+ (desktop takes over)             */
-/*                                                                            */
-/*  Padding scales up as screen gets wider:                                   */
-/*    px-4           → phones                                                 */
-/*    sm:px-6        → large phones (640px+)                                  */
-/*    md:px-8        → tablets (768px+)                                       */
-/* -------------------------------------------------------------------------- */
 
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => (
   <motion.div
     animate={{
       backdropFilter: visible ? "blur(14px)" : "blur(0px)",
-      backgroundColor: visible ? "rgba(8,8,8,0.92)" : "rgba(0,0,0,0)",
+      backgroundColor: visible ? "rgba(6,6,6,0.97)" : "rgba(8,8,8,0.92)",
     }}
     transition={{ type: "tween", duration: 0.22, ease: "easeInOut" }}
     className={cn(
@@ -186,9 +155,6 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => (
   </motion.div>
 );
 
-/* -------------------------------------------------------------------------- */
-/*                            MOBILE HEADER ROW                               */
-/* -------------------------------------------------------------------------- */
 
 export const MobileNavHeader = ({
   children,
@@ -204,12 +170,7 @@ export const MobileNavHeader = ({
   </div>
 );
 
-/* -------------------------------------------------------------------------- */
-/*                            MOBILE NAV MENU                                 */
-/*                                                                            */
-/*  Animates open/close with height + opacity.                                */
-/*  Items have large tap targets (py-3) for thumb-friendly touch.             */
-/* -------------------------------------------------------------------------- */
+
 
 export const MobileNavMenu = ({
   children,
@@ -234,11 +195,6 @@ export const MobileNavMenu = ({
   </AnimatePresence>
 );
 
-/* -------------------------------------------------------------------------- */
-/*                                  TOGGLE                                    */
-/*                                                                            */
-/*  Icon size scales: 22px on phones, 24px on sm+                            */
-/* -------------------------------------------------------------------------- */
 
 export const MobileNavToggle = ({
   isOpen,
@@ -259,14 +215,6 @@ export const MobileNavToggle = ({
   </button>
 );
 
-/* -------------------------------------------------------------------------- */
-/*                                   LOGO                                     */
-/*                                                                            */
-/*  Logo image scales:                                                        */
-/*    w-[90px]   → tiny phones (320–375px)                                    */
-/*    sm:w-[110px] → normal phones (640px+)                                   */
-/*    lg:w-[120px] → desktop                                                  */
-/* -------------------------------------------------------------------------- */
 
 export const NavbarLogo = () => (
   <a
@@ -284,13 +232,6 @@ export const NavbarLogo = () => (
   </a>
 );
 
-/* -------------------------------------------------------------------------- */
-/*                              NAVBAR BUTTON                                 */
-/*                                                                            */
-/*  Mobile-first sizing:                                                      */
-/*    text-xs, px-3, py-1.5  → phones                                         */
-/*    sm:text-sm, sm:px-4    → large phones+                                  */
-/* -------------------------------------------------------------------------- */
 
 type NavbarButtonProps = {
   href: string;

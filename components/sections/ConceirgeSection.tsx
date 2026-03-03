@@ -5,9 +5,7 @@ import { FaCarSide, FaShieldAlt, FaTools, FaStar } from "react-icons/fa";
 import { MdDeliveryDining } from "react-icons/md";
 import Link from "next/link";
 
-/* -------------------------------------------------------------------------- */
-/*                                  DATA                                      */
-/* -------------------------------------------------------------------------- */
+
 
 const features = [
   {
@@ -36,9 +34,6 @@ const features = [
   },
 ];
 
-/* -------------------------------------------------------------------------- */
-/*                              CARD COMPONENT                                */
-/* -------------------------------------------------------------------------- */
 
 function FeatureCard({
   feature,
@@ -92,9 +87,7 @@ function FeatureCard({
   );
 }
 
-/* -------------------------------------------------------------------------- */
-/*                            MAIN SECTION                                    */
-/* -------------------------------------------------------------------------- */
+
 
 export default function ConciergeSection() {
   return (
@@ -144,12 +137,8 @@ export default function ConciergeSection() {
           </p>
         </motion.div>
 
-        {/* ── Feature Cards ──
-            Mobile-first grid:
-              1 col   → phones
-              sm:     → still 1 col (cards are tall enough)
-              md:     → 3 col side-by-side
-        ── */}
+        
+        
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:gap-5 md:grid-cols-3 lg:mt-16 lg:gap-6">
           {features.map((feature, i) => (
             <FeatureCard key={feature.title} feature={feature} index={i} />

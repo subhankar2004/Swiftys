@@ -6,9 +6,6 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-/* -------------------------------------------------------------------------- */
-/*                               FOOTER DATA                                  */
-/* -------------------------------------------------------------------------- */
 
 const companyLinks = [
   { name: "Home", href: "/" },
@@ -38,11 +35,7 @@ export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-[#080808] border-t border-white/8">
 
-      {/* ── Top strip ──
-          MOBILE FIRST logic:
-          - Default (all screens): flex-col, stacked
-          - md (768px+): flex-row, side by side
-      ── */}
+      
       <div className="mx-auto max-w-7xl border-b border-white/8 px-5 py-5 sm:px-6 md:px-8 md:py-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 
@@ -72,19 +65,11 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Main body ──
-          MOBILE FIRST grid:
-          - Default:  1 column (stacked)
-          - sm(640+): 2 columns
-          - lg(1024+): 4 columns
-      ── */}
+      
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 lg:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-12">
 
-          {/* Col 1 — Logo + tagline + socials
-              sm: spans both columns so logo sits above the 2-col link grid
-              lg: returns to its own single column
-          */}
+          
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
               <Image
@@ -120,10 +105,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link columns sub-grid
-              sm: occupies col-span-2, 2 columns inside
-              lg: occupies 3 columns, 3 columns inside
-          */}
           <div className="grid grid-cols-2 gap-8 sm:col-span-2 lg:col-span-3 lg:grid-cols-3">
 
             {/* Company */}
